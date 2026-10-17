@@ -1,0 +1,2 @@
+timestamp,action,reason,prediction_prob,utilization_pct,should_execute,new_costs,verification
+1000.0,reroute,Predicted congestion exceeds the high hysteresis threshold.,0.95,75.0,True,"{'s1-s3': 999, 's1-s2': 10}",

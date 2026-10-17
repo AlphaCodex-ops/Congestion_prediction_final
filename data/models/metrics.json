@@ -1,0 +1,86 @@
+{
+  "feature_names": [
+    "utilization_pct",
+    "utilization_pct_lag1",
+    "utilization_pct_lag2",
+    "utilization_pct_lag3",
+    "utilization_pct_lag6",
+    "utilization_rolling_mean_10s",
+    "utilization_rolling_max_10s",
+    "utilization_rolling_std_10s",
+    "utilization_rolling_mean_30s",
+    "utilization_rolling_max_30s",
+    "utilization_rolling_std_30s",
+    "utilization_delta",
+    "utilization_accel",
+    "packets_per_sec",
+    "packets_per_sec_lag1",
+    "drop_rate"
+  ],
+  "feature_config": {
+    "sample_interval_sec": 5,
+    "lags": [
+      1,
+      2,
+      3,
+      6
+    ],
+    "rolling_windows_sec": [
+      10,
+      30
+    ],
+    "target_horizon_sec": 30,
+    "congestion_threshold_pct": 70,
+    "train_fraction": 0.7,
+    "target_link": [
+      "s1",
+      "s3"
+    ]
+  },
+  "split_strategy": "scenario",
+  "train_scenarios": [
+    "ramp",
+    "burst"
+  ],
+  "test_scenarios": [
+    "periodic"
+  ],
+  "train_samples": 216,
+  "test_samples": 108,
+  "metrics": {
+    "accuracy": 0.7592592592592593,
+    "precision": 0.7592592592592593,
+    "recall": 1.0,
+    "f1": 0.8631578947368421,
+    "roc_auc": 0.8517823639774857,
+    "confusion_matrix": [
+      [
+        0,
+        26
+      ],
+      [
+        0,
+        82
+      ]
+    ],
+    "feature_importance": {
+      "utilization_pct": 0.9030505397911994,
+      "utilization_pct_lag1": 0.015272634391402416,
+      "utilization_pct_lag2": 1.0531787296818265e-06,
+      "utilization_pct_lag3": 1.8799027273959774e-06,
+      "utilization_pct_lag6": 3.523384258230608e-06,
+      "utilization_rolling_mean_10s": 0.07854282648092369,
+      "utilization_rolling_max_10s": 0.00033902833873583393,
+      "utilization_rolling_std_10s": 1.1525723567779702e-06,
+      "utilization_rolling_mean_30s": 3.0065968454901373e-06,
+      "utilization_rolling_max_30s": 1.5422677203666662e-06,
+      "utilization_rolling_std_30s": 1.745615856306875e-06,
+      "utilization_delta": 3.044994849937516e-06,
+      "utilization_accel": 0.0,
+      "packets_per_sec": 0.00012901459253985894,
+      "packets_per_sec_lag1": 0.00021089375796651133,
+      "drop_rate": 0.002438114133888061
+    },
+    "baseline_accuracy": 0.7592592592592593
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "action": "reroute",
+  "reason": "Predicted congestion exceeds the high hysteresis threshold.",
+  "new_costs": {
+    "s1-s3": 999,
+    "s1-s2": 10
+  },
+  "should_execute": true,
+  "prediction_prob": 0.95,
+  "utilization_pct": 75.0,
+  "timestamp": 1000.0
+}

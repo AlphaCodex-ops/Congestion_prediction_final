@@ -1,0 +1,56 @@
+project:
+  random_seed: 42
+
+simulation:
+  sample_interval_sec: 5
+  primary_capacity_mbps: 10
+  backup_capacity_mbps: 5
+  primary_latency_ms: 4
+  backup_latency_ms: 2
+  default_link: [s1, s3]
+  alternate_link: [s1, s2]
+
+collector:
+  poll_interval_sec: 1
+  csv_path: data/raw/mininet_live_controller.csv
+  links:
+    - [r2, r3]
+    - [r1, r3]
+
+feature_builder:
+  sample_interval_sec: 1
+  lags: [1, 2, 5]
+  rolling_windows_sec: [5, 10]
+  target_horizon_sec: 10
+  congestion_threshold_pct: 70
+  train_fraction: 0.7
+
+trainer:
+  n_estimators: 120
+  learning_rate: 0.05
+  max_depth: 3
+  min_samples_split: 10
+  min_samples_leaf: 5
+  subsample: 0.8
+  random_state: 42
+
+decision_engine:
+  threshold_high: 0.7
+  threshold_low: 0.4
+  cooldown_sec: 60
+  reactive_utilization_threshold: 85
+  revert_delay_sec: 120
+  primary_link: [r2, r3]
+  backup_link: [r1, r3]
+  source_host: h1
+  destination_host: h2
+  primary_path: [r1, r2, r3]
+  backup_path: [r1, r3]
+  primary_cost: 10
+  backup_cost: 100
+  reroute_cost: 999
+  verification_delay_sec: 10
+
+simulation_scenarios:
+  duration_sec: 1800
+  peak_load_mbps: 30

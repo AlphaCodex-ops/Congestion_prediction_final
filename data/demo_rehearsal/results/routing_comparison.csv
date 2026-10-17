@@ -1,0 +1,4 @@
+policy,peak_utilization_pct,mean_utilization_pct,samples_over_85_pct
+static_simulated,100.0,77.31321182179819,70.83333333333334
+reactive_simulated,83.33333333333334,52.59114449351271,0.0
+predictive_simulated,58.33333333333333,44.202045576297394,0.0

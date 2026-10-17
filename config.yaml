@@ -1,0 +1,49 @@
+project:
+  random_seed: 42
+
+simulation:
+  sample_interval_sec: 5
+  primary_capacity_mbps: 10
+  backup_capacity_mbps: 5
+  primary_latency_ms: 4
+  backup_latency_ms: 2
+  default_link: [s1, s3]
+  alternate_link: [s1, s2]
+
+collector:
+  poll_interval_sec: 5
+  csv_path: data/raw/stats.csv
+
+feature_builder:
+  sample_interval_sec: 5
+  lags: [1, 2, 3, 6]
+  rolling_windows_sec: [10, 30]
+  target_horizon_sec: 30
+  congestion_threshold_pct: 70
+  train_fraction: 0.7
+
+trainer:
+  n_estimators: 120
+  learning_rate: 0.05
+  max_depth: 3
+  min_samples_split: 10
+  min_samples_leaf: 5
+  subsample: 0.8
+  random_state: 42
+
+decision_engine:
+  threshold_high: 0.7
+  threshold_low: 0.4
+  cooldown_sec: 60
+  reactive_utilization_threshold: 85
+  revert_delay_sec: 120
+  primary_link: [s1, s3]
+  backup_link: [s1, s2]
+  primary_cost: 10
+  backup_cost: 100
+  reroute_cost: 999
+  verification_delay_sec: 10
+
+simulation_scenarios:
+  duration_sec: 1800
+  peak_load_mbps: 30

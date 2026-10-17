@@ -1,0 +1,2 @@
+[console_scripts]
+congestion-project = congestion_project.cli:main

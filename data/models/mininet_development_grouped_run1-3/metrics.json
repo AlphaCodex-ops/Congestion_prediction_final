@@ -1,0 +1,134 @@
+{
+  "feature_names": [
+    "utilization_pct",
+    "utilization_pct_lag1",
+    "utilization_pct_lag2",
+    "utilization_pct_lag5",
+    "utilization_rolling_mean_5s",
+    "utilization_rolling_max_5s",
+    "utilization_rolling_std_5s",
+    "utilization_rolling_mean_10s",
+    "utilization_rolling_max_10s",
+    "utilization_rolling_std_10s",
+    "utilization_delta",
+    "utilization_accel",
+    "packets_per_sec",
+    "packets_per_sec_lag1",
+    "drop_rate"
+  ],
+  "feature_config": {
+    "sample_interval_sec": 1,
+    "lags": [
+      1,
+      2,
+      5
+    ],
+    "rolling_windows_sec": [
+      5,
+      10
+    ],
+    "target_horizon_sec": 10,
+    "congestion_threshold_pct": 70,
+    "train_fraction": 0.7,
+    "target_link": [
+      "r1",
+      "r2"
+    ]
+  },
+  "split_strategy": "scenario",
+  "train_scenarios": [
+    "run1::clear_01",
+    "run1::congested_01",
+    "run1::clear_02",
+    "run1::congested_02",
+    "run1::clear_03",
+    "run1::congested_03",
+    "run1::clear_04",
+    "run1::congested_04",
+    "run1::clear_05",
+    "run1::congested_05",
+    "run1::clear_06",
+    "run1::congested_06",
+    "run2::clear_01",
+    "run2::near_threshold_01",
+    "run2::congested_01",
+    "run2::clear_02",
+    "run2::near_threshold_02",
+    "run2::congested_02",
+    "run2::clear_03",
+    "run2::near_threshold_03",
+    "run2::congested_03",
+    "run2::clear_04",
+    "run2::near_threshold_04",
+    "run2::congested_04",
+    "run2::clear_05",
+    "run2::near_threshold_05",
+    "run2::congested_05",
+    "run2::clear_06",
+    "run2::near_threshold_06",
+    "run2::congested_06",
+    "run3::below_threshold_01",
+    "run3::near_threshold_low_01",
+    "run3::near_threshold_high_01",
+    "run3::above_threshold_01",
+    "run3::below_threshold_02",
+    "run3::near_threshold_low_02",
+    "run3::near_threshold_high_02"
+  ],
+  "test_scenarios": [
+    "run3::above_threshold_02",
+    "run3::below_threshold_03",
+    "run3::near_threshold_low_03",
+    "run3::near_threshold_high_03",
+    "run3::above_threshold_03",
+    "run3::below_threshold_04",
+    "run3::near_threshold_low_04",
+    "run3::near_threshold_high_04",
+    "run3::above_threshold_04",
+    "run3::below_threshold_05",
+    "run3::near_threshold_low_05",
+    "run3::near_threshold_high_05",
+    "run3::above_threshold_05",
+    "run3::below_threshold_06",
+    "run3::near_threshold_low_06",
+    "run3::near_threshold_high_06",
+    "run3::above_threshold_06"
+  ],
+  "train_samples": 1513,
+  "test_samples": 694,
+  "metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "roc_auc": 1.0,
+    "confusion_matrix": [
+      [
+        164,
+        0
+      ],
+      [
+        0,
+        530
+      ]
+    ],
+    "feature_importance": {
+      "utilization_pct": 0.15582580703343418,
+      "utilization_pct_lag1": 0.07863645303322073,
+      "utilization_pct_lag2": 0.10288930369179054,
+      "utilization_pct_lag5": 0.09921506246499477,
+      "utilization_rolling_mean_5s": 0.23769948658399428,
+      "utilization_rolling_max_5s": 0.000575062517534419,
+      "utilization_rolling_std_5s": 2.4680315621062254e-16,
+      "utilization_rolling_mean_10s": 0.13129421745390013,
+      "utilization_rolling_max_10s": 0.015839702178537352,
+      "utilization_rolling_std_10s": 2.519512478895309e-16,
+      "utilization_delta": 2.5011163324229806e-18,
+      "utilization_accel": 2.2041455013343085e-16,
+      "packets_per_sec": 0.038490798829474766,
+      "packets_per_sec_lag1": 0.13953410621311818,
+      "drop_rate": 0.0
+    },
+    "baseline_accuracy": 0.7636887608069164
+  }
+}

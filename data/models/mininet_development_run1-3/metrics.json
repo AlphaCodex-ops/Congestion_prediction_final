@@ -1,0 +1,75 @@
+{
+  "feature_names": [
+    "utilization_pct",
+    "utilization_pct_lag1",
+    "utilization_pct_lag2",
+    "utilization_pct_lag5",
+    "utilization_rolling_mean_5s",
+    "utilization_rolling_max_5s",
+    "utilization_rolling_std_5s",
+    "utilization_rolling_mean_10s",
+    "utilization_rolling_max_10s",
+    "utilization_rolling_std_10s",
+    "utilization_delta",
+    "utilization_accel",
+    "packets_per_sec",
+    "packets_per_sec_lag1",
+    "drop_rate"
+  ],
+  "feature_config": {
+    "sample_interval_sec": 1,
+    "lags": [
+      1,
+      2,
+      5
+    ],
+    "rolling_windows_sec": [
+      5,
+      10
+    ],
+    "target_horizon_sec": 10,
+    "congestion_threshold_pct": 70,
+    "train_fraction": 0.7,
+    "target_link": [
+      "r1",
+      "r2"
+    ]
+  },
+  "train_samples": 1540,
+  "test_samples": 657,
+  "metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "roc_auc": 1.0,
+    "confusion_matrix": [
+      [
+        164,
+        0
+      ],
+      [
+        0,
+        493
+      ]
+    ],
+    "feature_importance": {
+      "utilization_pct": 0.12920043170615597,
+      "utilization_pct_lag1": 0.15004528423711697,
+      "utilization_pct_lag2": 0.08338655954414832,
+      "utilization_pct_lag5": 0.06393230173748717,
+      "utilization_rolling_mean_5s": 0.005237866243645941,
+      "utilization_rolling_max_5s": 0.1547286519263034,
+      "utilization_rolling_std_5s": 6.626759515461197e-17,
+      "utilization_rolling_mean_10s": 0.005805546352818628,
+      "utilization_rolling_max_10s": 0.06017989550800159,
+      "utilization_rolling_std_10s": 4.131979467063291e-15,
+      "utilization_delta": 9.036023682665802e-16,
+      "utilization_accel": 1.0232325604833112e-17,
+      "packets_per_sec": 0.19815770504781233,
+      "packets_per_sec_lag1": 0.14932575769650475,
+      "drop_rate": 0.0
+    },
+    "baseline_accuracy": 0.7503805175038052
+  }
+}
