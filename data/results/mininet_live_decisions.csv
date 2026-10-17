@@ -1362,3 +1362,6 @@ timestamp,action,reason,prediction_prob,utilization_pct,should_execute,new_costs
 1792259647.9010997,hold,"Below the revert threshold, but the minimum reroute hold time has not elapsed.",0.0012177823921898485,0.03283435850130611,False,{},,enabled,
 1792259648.90431,hold,"Below the revert threshold, but the minimum reroute hold time has not elapsed.",0.0012177823921898485,0.0,False,{},,enabled,
 1792259649.9068112,hold,"Below the revert threshold, but the minimum reroute hold time has not elapsed.",0.0012177823921898485,0.0,False,{},,enabled,
+1792259650.909815,hold,"Below the revert threshold, but the minimum reroute hold time has not elapsed.",0.0012177823921898485,0.0,False,{},,enabled,
+1792259651.9135149,hold,"Below the revert threshold, but the minimum reroute hold time has not elapsed.",0.0012177823921898485,0.0,False,{},,enabled,
+1792259652.9173243,hold,"Below the revert threshold, but the minimum reroute hold time has not elapsed.",0.0012177823921898485,0.0,False,{},,enabled,
