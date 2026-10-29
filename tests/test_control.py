@@ -1,5 +1,8 @@
+from pathlib import Path
+
 import pytest
 
+from congestion_project.config import load_config
 from congestion_project.control import Actuator, CongestionController, DecisionEngine, Verifier
 from congestion_project.simulation import SimulatedConnector
 
@@ -28,6 +31,20 @@ def test_decision_engine_reroutes_then_reverts_after_hysteresis_and_delays():
     revert = engine.decide(0.2, 30, now=221)
     assert revert["action"] == "revert"
     assert revert["new_costs"] == {"s1-s3": 10, "s1-s2": 100}
+
+
+def test_mininet_config_allows_route_revert_after_six_second_hold_and_cooldown():
+    config_path = Path(__file__).parents[1] / "config.mininet.yaml"
+    config = load_config(config_path)["decision_engine"]
+    engine = DecisionEngine(config)
+
+    assert engine.revert_delay_sec == 6
+    assert engine.cooldown_sec == 6
+
+    reroute = engine.decide(0.9, 70, now=100)
+    engine.record_execution(reroute, now=100)
+    assert engine.decide(0.2, 30, now=105.9)["action"] == "hold"
+    assert engine.decide(0.2, 30, now=106)["action"] == "revert"
 
 
 def test_decision_engine_rejects_non_finite_inputs():

@@ -104,4 +104,5 @@ using either.
 See [architecture](docs/architecture.md), [training](docs/training_guide.md),
 [API](docs/API.md), [deployment](docs/deployment.md), and
 [troubleshooting](docs/troubleshooting.md). Follow the guided remaining steps
-in [docs/next_steps.md](docs/next_steps.md).
+in [docs/next_steps.md](docs/next_steps.md). The detailed, evidence-based
+project report is in [docs/project_report.md](docs/project_report.md).

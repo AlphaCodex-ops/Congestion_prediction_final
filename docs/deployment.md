@@ -129,6 +129,12 @@ mode, only use the slider in this isolated lab and observe both route lookups
 and decision verification before presenting a reroute. This external load is
 generated inside the lab; it is not internet traffic.
 
+The current Mininet controller uses a 6-second minimum reroute hold and a
+6-second route-change cooldown so a classroom demonstration can show route
+changes quickly. These short intervals increase the risk of switching back
+and forth when the measured link becomes quiet after rerouting. Keep actuation
+inside the disposable lab and monitor both the route and controller decision.
+
 The same test flow can also be started manually at the Mininet prompt and its
 route inspected with:
 

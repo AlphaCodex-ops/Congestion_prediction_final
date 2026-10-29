@@ -37,9 +37,9 @@ trainer:
 decision_engine:
   threshold_high: 0.7
   threshold_low: 0.4
-  cooldown_sec: 60
+  cooldown_sec: 6
   reactive_utilization_threshold: 85
-  revert_delay_sec: 120
+  revert_delay_sec: 6
   primary_link: [r2, r3]
   backup_link: [r1, r3]
   source_host: h1
